@@ -19,6 +19,18 @@ ul {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 600px) {
+    .links {
+        width: 80vw
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #quote-of-the-day {
+        display: none;
+    }
+}
+
 .nav-link {
     color: #265714;
 }
@@ -48,6 +60,12 @@ ul {
     padding: 10px;
 }
 
+@media screen and (max-width:750px) {
+    .quote-card {
+        display: block;
+    }
+}
+
 .voting {
     width: 20%;
 }
@@ -66,12 +84,12 @@ ul {
 
 .social-links {
     display: flex;
-    justify-content: space-between;
 }
 
 .social-links img {
     background-color: #265714;
     width: 20px;
+    margin-left: 10px;
 }
 
 .author-details {
