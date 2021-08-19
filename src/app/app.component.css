@@ -1,0 +1,79 @@
+.navbar,
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-brand img {
+    width: 10vmin;
+    height: 10vmin;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.links {
+    display: flex;
+    align-content: center;
+    width: 50vw;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: #265714;
+}
+
+.image-section {
+    background-image: url(../assets/philosophy-img1.jpg);
+    background-repeat: no-repeat;
+    background-position: unset;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+}
+
+.call-to-action {
+    text-align: center
+}
+
+.quote-card {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    border: solid black 1px;
+    border-radius: 15px;
+    justify-content: space-between;
+    margin-left: 1rem;
+    align-items: center;
+    padding: 10px;
+}
+
+.voting {
+    width: 20%;
+}
+
+.upvote,
+.downvote {
+    display: flex;
+    align-items: center;
+}
+
+.upvote-display,
+.downvote-display {
+    border: solid black 0.2px;
+    padding-right: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-links img {
+    background-color: #265714;
+    width: 20px;
+}
+
+.author-details {
+    color: #265714;
+}
