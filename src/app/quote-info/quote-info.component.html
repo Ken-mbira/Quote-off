@@ -1,21 +1,23 @@
 <ol>
-    <li>
+    <li *ngFor="let item of quoteInfo">
         <div class="quote-card">
             <div class="voting">
                 <div class="upvote">
                     <div class="btn upvote-button"><img src="../assets/Polygon 1.png" width="40px" height="40px"></div>
-                    <div class="upvote-display"></div>
+                    <div class="upvote-display">{{item.upVotes}}</div>
                 </div>
                 <div class="downvote">
                     <div class="btn downvote-button"><img src="../assets/Polygon 2.png" width="40px" height="40px"></div>
-                    <div class="downvote-display"></div>
+                    <div class="downvote-display">{{item.downVotes}}</div>
                 </div>
             </div>
             <div class="quote-details">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis omnis aliquid excepturi vel a?</p>
+                <p>
+                    "{{item.quote}}"
+                </p>
+                <button class="btn btn-outline-secondary">Show info</button>
                 <div class="author-details">
-                    <p>-authors name-</p>
-                    <p>job-title</p>
+                    <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded}}</p>
                 </div>
                 <div class="social-links">
                     <a href="#"><img src="../assets/facebook.png" alt="facebook image"></a>

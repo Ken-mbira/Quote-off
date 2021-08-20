@@ -8,6 +8,9 @@ import { Quote } from '../quote';
   styleUrls: ['./quote-info.component.css']
 })
 export class QuoteInfoComponent implements OnInit {
+quoteInfo : Quote[] = [
+  new Quote("Albert Einstein",1,"Physicist", 0, 0,"The important thing is to not stop questioning. Curiosity has its own reason for existing.",new Date(1920,3,2))
+]
 
   constructor() { }
 
