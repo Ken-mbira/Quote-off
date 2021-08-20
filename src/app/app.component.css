@@ -10,7 +10,8 @@
 .navbar {
     position: sticky;
     top: -1px;
-    background-color: #ffff;
+    background-color: #c4c4c4;
+    z-index: 1;
 }
 
 .navbar-brand img {
