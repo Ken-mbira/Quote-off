@@ -3,19 +3,19 @@
         <div class="quote-card">
             <div class="voting" *ngIf="item.showDetails">
                 <div class="upvote">
-                    <div class="btn upvote-button"><img src="../assets/Polygon 1.png" width="40px" height="40px"></div>
-                    <div class="upvote-display">{{item.upVotes}}</div>
+                    <div class="btn upvote-button " (click)=upVote(i)><img src="../assets/Polygon 1.png" width="40px" height="40px"></div>
+                    <div class="upvote-display">{{item.upvoteValue}}</div>
                 </div>
                 <div class="downvote">
-                    <div class="btn downvote-button"><img src="../assets/Polygon 2.png" width="40px" height="40px"></div>
-                    <div class="downvote-display">{{item.downVotes}}</div>
+                    <div class="btn downvote-button" (click)=downVote(i)><img src="../assets/Polygon 2.png" width="40px" height="40px"></div>
+                    <div class="downvote-display">{{item.downvoteValue}}</div>
                 </div>
             </div>
             <div class="quote-details">
                 <p>
                     "{{item.quote}}"
                 </p>
-                <button class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</button>
+                <div class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</div>
                 <div class="author-details" *ngIf="item.showDetails">
                     <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
                 </div>
