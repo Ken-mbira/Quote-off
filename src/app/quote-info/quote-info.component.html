@@ -1,7 +1,7 @@
 <ol>
-    <li *ngFor="let item of quoteInfo">
+    <li *ngFor="let item of quoteInfo; let i = index">
         <div class="quote-card">
-            <div class="voting">
+            <div class="voting" *ngIf="item.showDetails">
                 <div class="upvote">
                     <div class="btn upvote-button"><img src="../assets/Polygon 1.png" width="40px" height="40px"></div>
                     <div class="upvote-display">{{item.upVotes}}</div>
@@ -15,11 +15,12 @@
                 <p>
                     "{{item.quote}}"
                 </p>
-                <button class="btn btn-outline-secondary">Show info</button>
-                <div class="author-details">
-                    <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded}}</p>
+                <button class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</button>
+                <button class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="item.showDetails">Hide info</button>
+                <div class="author-details" *ngIf="item.showDetails">
+                    <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
                 </div>
-                <div class="social-links">
+                <div class="social-links" *ngIf="item.showDetails">
                     <a href="#"><img src="../assets/facebook.png" alt="facebook image"></a>
                     <a href="#"><img src="../assets/twitter.png" alt="twitter image"></a>
                     <a href="#"><img src="../assets/linkedin.png" alt="linkedin image"></a>
