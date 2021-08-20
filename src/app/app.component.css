@@ -31,6 +31,12 @@ ul {
     }
 }
 
+.page-break {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .nav-link {
     color: #265714;
 }
