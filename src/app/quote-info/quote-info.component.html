@@ -16,7 +16,6 @@
                     "{{item.quote}}"
                 </p>
                 <button class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</button>
-                <button class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="item.showDetails">Hide info</button>
                 <div class="author-details" *ngIf="item.showDetails">
                     <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
                 </div>
@@ -26,6 +25,7 @@
                     <a href="#"><img src="../assets/linkedin.png" alt="linkedin image"></a>
                     <a href="#"><img src="../assets/instagram.png" alt="instagram image"></a>
                 </div>
+                <button class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="item.showDetails" id="hide-button">Hide info</button>
             </div>
         </div>
     </li>
