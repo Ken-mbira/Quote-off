@@ -18,6 +18,7 @@
                 <div class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</div>
                 <div class="author-details" *ngIf="item.showDetails">
                     <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
+                    <p>This quote was submitted by: {{item.quoteSubmitter}}</p>
                 </div>
                 <div class="social-links" *ngIf="item.showDetails">
                     <a href="#"><img src="../assets/facebook.png" alt="facebook image"></a>
