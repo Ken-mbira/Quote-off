@@ -36,3 +36,4 @@
 <div *ngIf="quoteInfo.length < 1" class="alt-text">
     You have no more quotes left, you could add more by filling the form below...
 </div>
+<app-quote-form (addQuote)="createQuote($event)"></app-quote-form>

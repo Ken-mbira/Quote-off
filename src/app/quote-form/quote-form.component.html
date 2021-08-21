@@ -1,1 +1,38 @@
-<p>quote-form works!</p>
+<div class="container">
+    <div class="form-title">
+        <h2><u>Create a Quote..</u></h2>
+    </div>
+    <form (ngSubmit)="addNewQuote()" #quoteForm='ngForm' class="card">
+        <div class="form-group">
+            <label for="">Enter the name of the author:</label><br>
+            <input id="name" type="text" class="form-control" required [(ngModel)]="newQuote.quoteName" name="quoteName" #quoteName='ngModel'>
+            <div [hidden]="quoteName.valid || quoteName.pristine" class="alert alert-danger">
+                <p>The name of the author is required.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="job">Enter the author's job-title:</label><br>
+            <input id="job" type="text" class="form-control" required [(ngModel)]="newQuote.jobTitle" name="jobTitle" #jobTitle='ngModel'>
+            <div [hidden]="jobTitle.valid || jobTitle.pristine" class="alert alert-danger">
+                <p>The author's job-title is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="quote">Enter the quote:</label><br>
+            <input id="quote" type="text" class="form-control" required [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel'>
+            <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                <p>Please enter the actual quote.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="date">Enter the date added:</label><br>
+            <input id="date" type="date" class="form-control" [(ngModel)]="newQuote.dateAdded" name="dateAdded" #dateAdded='ngModel' required>
+            <div [hidden]="dateAdded.valid || dateAdded.pristine" class="alert alert-danger">
+                <p>Please add the date this quote was said</p>
+            </div>
+        </div>
+        <div class="form-group" id="submit-button">
+            <button class="btn btn-success" type="submit">Add Quote</button>
+        </div>
+    </form>
+</div>
