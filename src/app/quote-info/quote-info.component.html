@@ -1,6 +1,6 @@
 <ol>
-    <li appHighlight *ngFor="let item of quoteInfo; let i = index">
-        <div class="quote-card">
+    <li *ngFor="let item of quoteInfo; let i = index">
+        <div appHighlight class="quote-card" *ngIf="item.topVote">
             <div class="voting" *ngIf="item.showDetails">
                 <div class="upvote">
                     <div class="btn upvote-button " (click)=upVote(i)><img src="../assets/Polygon 1.png" width="40px" height="40px"></div>
@@ -34,8 +34,6 @@
                 </div>
             </div>
         </div>
-    </li>
-    <li *ngFor="let item of quoteInfo; let i = index">
         <div class="quote-card">
             <div class="voting" *ngIf="item.showDetails">
                 <div class="upvote">
