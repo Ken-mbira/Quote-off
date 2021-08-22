@@ -9,6 +9,7 @@ import { RemoveQuoteComponent } from './remove-quote/remove-quote.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuoteLifePipe } from './quote-life.pipe';
 import { VoteCounterComponent } from './vote-counter/vote-counter.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { VoteCounterComponent } from './vote-counter/vote-counter.component';
     QuoteFormComponent,
     QuoteLifePipe,
     VoteCounterComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

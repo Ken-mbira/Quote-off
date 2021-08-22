@@ -1,4 +1,40 @@
 <ol>
+    <li appHighlight *ngFor="let item of quoteInfo; let i = index">
+        <div class="quote-card">
+            <div class="voting" *ngIf="item.showDetails">
+                <div class="upvote">
+                    <div class="btn upvote-button " (click)=upVote(i)><img src="../assets/Polygon 1.png" width="40px" height="40px"></div>
+                    <div class="upvote-display">{{item.upvoteValue}}</div>
+                </div>
+                <div class="downvote">
+                    <div class="btn downvote-button" (click)=downVote(i)><img src="../assets/Polygon 2.png" width="40px" height="40px"></div>
+                    <div class="downvote-display">{{item.downvoteValue}}</div>
+                </div>
+            </div>
+            <div class="quote-details">
+                <p>
+                    "{{item.quote}}"
+                </p>
+                <div class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</div>
+                <div class="author-details" *ngIf="item.showDetails">
+                    <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
+                    <p>This quote was submitted by: {{item.quoteSubmitter}} {{item.dateAdded|quoteLife}}</p>
+                    <p title="upvotes-downvotes">Cumulative votes: {{item.upvoteValue + item.downvoteValue}}
+                    </p>
+                </div>
+                <div class="social-links" *ngIf="item.showDetails">
+                    <a href="#"><img src="../assets/facebook.png" alt="facebook image"></a>
+                    <a href="#"><img src="../assets/twitter.png" alt="twitter image"></a>
+                    <a href="#"><img src="../assets/linkedin.png" alt="linkedin image"></a>
+                    <a href="#"><img src="../assets/instagram.png" alt="instagram image"></a>
+                </div>
+                <div *ngIf="item.showDetails">
+                    <button class="btn btn-outline-secondary" (click)=toggleDetails(i) id="hide-button">Hide info</button><br>
+                    <app-remove-quote (remove)="quoteDelete($event,i)"></app-remove-quote>
+                </div>
+            </div>
+        </div>
+    </li>
     <li *ngFor="let item of quoteInfo; let i = index">
         <div class="quote-card">
             <div class="voting" *ngIf="item.showDetails">
