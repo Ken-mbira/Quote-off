@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { QuoteInfoComponent } from './quote-info/quote-info.component';
 import { RemoveQuoteComponent } from './remove-quote/remove-quote.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
-import { QuoteLifePipe } from './quote-life.pipe'
+import { QuoteLifePipe } from './quote-life.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { QuoteLifePipe } from './quote-life.pipe'
     QuoteInfoComponent,
     RemoveQuoteComponent,
     QuoteFormComponent,
-    QuoteLifePipe
+    QuoteLifePipe,
   ],
   imports: [
     BrowserModule,

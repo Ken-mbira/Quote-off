@@ -19,6 +19,8 @@
                 <div class="author-details" *ngIf="item.showDetails">
                     <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
                     <p>This quote was submitted by: {{item.quoteSubmitter}} {{item.dateAdded|quoteLife}}</p>
+                    <p title="upvotes-downvotes">Cumulative votes: {{item.upvoteValue + item.downvoteValue}}
+                    </p>
                 </div>
                 <div class="social-links" *ngIf="item.showDetails">
                     <a href="#"><img src="../assets/facebook.png" alt="facebook image"></a>
