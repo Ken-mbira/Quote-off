@@ -8,6 +8,7 @@ The following technologies were used in the making of the folloewing application
 3. CSS
 4. Angular
 5. Bootstrap
+6. JavaScript
 
 # Contributors
 1. Ken Mbira
