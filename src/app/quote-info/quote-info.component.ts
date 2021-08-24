@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Quote } from '../quote';
+import { QuoteService } from '../quote-service/quote.service';
 
 @Component({
   selector: 'app-quote-info',
@@ -8,10 +9,9 @@ import { Quote } from '../quote';
   styleUrls: ['./quote-info.component.css']
 })
 export class QuoteInfoComponent implements OnInit {
-  quoteInfo : Quote[] = [
-    new Quote("Albert Einstein",1,"Theoretical Physicist","The important thing is to not stop questioning. Curiosity has its own reason for existing.",new Date(2021,3,2),"Ken Mbira"),
-    new Quote("Elon Musk",2,"CEO of Tesla Motors", "When something is important enough, you do it even if the odds are not in your favour.",new Date(2021,3,6),"Ken Mbira")
-  ];
+
+  quoteInfo:Quote[];
+
   upVote(index){
   this.quoteInfo[index].upvoteValue += 1;
   
@@ -38,7 +38,9 @@ export class QuoteInfoComponent implements OnInit {
       this.quoteInfo[index].topVote = !this.quoteInfo[index].topVote
   }
 
-  constructor() { }
+  constructor(quoteService:QuoteService) {
+    this.quoteInfo = quoteService.getList();
+  }
 
   ngOnInit(): void {
   }
