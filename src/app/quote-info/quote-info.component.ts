@@ -14,6 +14,7 @@ export class QuoteInfoComponent implements OnInit {
   ];
   upVote(index){
   this.quoteInfo[index].upvoteValue += 1;
+  
   };
   downVote(index){
     this.quoteInfo[index].downvoteValue -= 1;
@@ -26,10 +27,15 @@ export class QuoteInfoComponent implements OnInit {
       this.quoteInfo.splice(index,1);
     }
   }
+  
   createQuote(quote){
     quote.id = this.quoteInfo.length + 1;
     quote.dateAdded = new Date(quote.dateAdded)
     this.quoteInfo.push(quote)
+  }
+
+  displayInfo(index){
+      this.quoteInfo[index].topVote = !this.quoteInfo[index].topVote
   }
 
   constructor() { }

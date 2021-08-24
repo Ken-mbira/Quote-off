@@ -1,76 +1,42 @@
 <ol>
     <li *ngFor="let item of quoteInfo; let i = index">
-        <div appHighlight class="quote-card" *ngIf="item.topVote">
-            <div class="voting" *ngIf="item.showDetails">
-                <div class="upvote">
-                    <div class="btn upvote-button " (click)=upVote(i)><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/Polygon%201.png?raw=true" width="40px" height="40px"></div>
-                    <div class="upvote-display">{{item.upvoteValue}}</div>
+        <div appHighlight class="quote-card">
+            <div class=" voting " *ngIf="item.showDetails ">
+                <div class="upvote ">
+                    <div class="btn upvote-button " (click)=upVote(i)><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/Polygon%201.png?raw=true " width="40px " height="40px "></div>
+                    <div class="upvote-display ">{{item.upvoteValue}}</div>
                 </div>
-                <div class="downvote">
-                    <div class="btn downvote-button" (click)=downVote(i)><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/Polygon%202.png?raw=true" width="40px" height="40px"></div>
-                    <div class="downvote-display">{{item.downvoteValue}}</div>
+                <div class="downvote ">
+                    <div class="btn downvote-button " (click)=downVote(i)><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/Polygon%202.png?raw=true " width="40px " height="40px "></div>
+                    <div class="downvote-display ">{{item.downvoteValue}}</div>
                 </div>
             </div>
-            <div class="quote-details">
+            <div class="quote-details ">
                 <p>
-                    "{{item.quote}}"
+                    "{{item.quote}} "
                 </p>
-                <div class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</div>
-                <div class="author-details" *ngIf="item.showDetails">
+                <div class="btn btn-outline-secondary " (click)=toggleDetails(i) *ngIf="!item.showDetails ">Show info</div>
+                <div class="author-details " *ngIf="item.showDetails ">
                     <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
                     <p>This quote was submitted by: {{item.quoteSubmitter}} {{item.dateAdded|quoteLife}}</p>
-                    <p title="upvotes-downvotes">Cumulative votes: {{item.upvoteValue + item.downvoteValue}}
+                    <p title="upvotes-downvotes ">Cumulative votes: {{item.upvoteValue + item.downvoteValue}}
                     </p>
                 </div>
-                <div class="social-links" *ngIf="item.showDetails">
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/facebook.png?raw=true" alt="facebook image"></a>
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/instagram.png?raw=true" alt="twitter image"></a>
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/linkedin.png?raw=true" alt="linkedin image"></a>
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/twitter.png?raw=true" alt="instagram image"></a>
+                <div class="social-links " *ngIf="item.showDetails ">
+                    <a href="# "><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/facebook.png?raw=true " alt="facebook image "></a>
+                    <a href="# "><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/instagram.png?raw=true " alt="twitter image "></a>
+                    <a href="# "><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/linkedin.png?raw=true " alt="linkedin image "></a>
+                    <a href="# "><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/twitter.png?raw=true " alt="instagram image "></a>
                 </div>
-                <div *ngIf="item.showDetails">
-                    <button class="btn btn-outline-secondary" (click)=toggleDetails(i) id="hide-button">Hide info</button><br>
-                    <app-remove-quote (remove)="quoteDelete($event,i)"></app-remove-quote>
-                </div>
-            </div>
-        </div>
-        <div class="quote-card">
-            <div class="voting" *ngIf="item.showDetails">
-                <div class="upvote">
-                    <div class="btn upvote-button " (click)=upVote(i)><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/Polygon%201.png?raw=true" width="40px" height="40px"></div>
-                    <div class="upvote-display">{{item.upvoteValue}}</div>
-                </div>
-                <div class="downvote">
-                    <div class="btn downvote-button" (click)=downVote(i)><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/Polygon%202.png?raw=true" width="40px" height="40px"></div>
-                    <div class="downvote-display">{{item.downvoteValue}}</div>
-                </div>
-            </div>
-            <div class="quote-details">
-                <p>
-                    "{{item.quote}}"
-                </p>
-                <div class="btn btn-outline-secondary" (click)=toggleDetails(i) *ngIf="!item.showDetails">Show info</div>
-                <div class="author-details" *ngIf="item.showDetails">
-                    <p>-{{item.quoteName}}-<br>{{item.jobTitle}}<br>{{item.dateAdded|date}}</p>
-                    <p>This quote was submitted by: {{item.quoteSubmitter}} {{item.dateAdded|quoteLife}}</p>
-                    <p title="upvotes-downvotes">Cumulative votes: {{item.upvoteValue + item.downvoteValue}}
-                    </p>
-                </div>
-                <div class="social-links" *ngIf="item.showDetails">
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/facebook.png?raw=true" alt="facebook image"></a>
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/instagram.png?raw=true" alt="twitter image"></a>
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/linkedin.png?raw=true" alt="linkedin image"></a>
-                    <a href="#"><img src="https://github.com/Ken-mbira/Quote-off/blob/master/src/assets/twitter.png?raw=true" alt="instagram image"></a>
-                </div>
-                <div *ngIf="item.showDetails">
-                    <button class="btn btn-outline-secondary" (click)=toggleDetails(i) id="hide-button">Hide info</button><br>
-                    <app-remove-quote (remove)="quoteDelete($event,i)"></app-remove-quote>
+                <div *ngIf="item.showDetails ">
+                    <button class="btn btn-outline-secondary " (click)=toggleDetails(i) id="hide-button ">Hide info</button><br>
+                    <app-remove-quote (remove)="quoteDelete($event,i) "></app-remove-quote>
                 </div>
             </div>
         </div>
     </li>
 </ol>
-<div *ngIf="quoteInfo.length < 1" class="alt-text">
+<div *ngIf="quoteInfo.length < 1 " class="alt-text ">
     You have no more quotes left, you could add more by filling the form below...
 </div>
-<app-quote-form (addQuote)="createQuote($event)"></app-quote-form>
+<app-quote-form (addQuote)="createQuote($event) "></app-quote-form>

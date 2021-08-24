@@ -17,7 +17,7 @@ import { HighlightDirective } from './highlight.directive';
     RemoveQuoteComponent,
     QuoteFormComponent,
     QuoteLifePipe,
-    HighlightDirective
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
